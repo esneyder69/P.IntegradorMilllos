@@ -1,0 +1,272 @@
+/* Variables de Diseño - Millonarios FC Premium */
+:root {
+    --azul-primario: #0033A0; /* Variable para el color azul institucional */
+    --azul-electrico: #0052FF; /* Variable para tonos azules vibrantes o de resalte */
+    --azul-oscuro: #040d21; /* Variable para el fondo general profundo */
+    --azul-tarjeta: #0b1a3a; /* Variable de tono azul utilizado en contenedores */
+    --dorado-millos: #FFD700; /* Variable para acentos de color amarillo/dorado */
+    --blanco-puro: #FFFFFF; /* Variable para el color blanco del texto */
+    --borde-glow: rgba(0, 82, 255, 0.5); /* Variable de color semi-transparente para efectos de resplandor */
+}
+
+* {
+    box-sizing: border-box; /* Incluye el padding y borde dentro del ancho/alto total de los elementos */
+    margin: 0; /* Elimina los márgenes predeterminados de todos los elementos */
+    padding: 0; /* Elimina los rellenos predeterminados de todos los elementos */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Define la tipografía base de la página */
+    background: radial-gradient(circle at top, #0d2352 0%, #030814 100%); /* Crea un fondo con degradado circular del azul al negro */
+    color: var(--blanco-puro); /* Establece el color de texto por defecto */
+    min-height: 100vh; /* Asegura que la página ocupe al menos el 100% de la altura de la pantalla */
+    display: flex; /* Activa el modelo Flexbox para alinear elementos fácilmente */
+    flex-direction: column; /* Organiza los elementos hijos en columna vertical */
+    align-items: center; /* Centra horizontalmente todo el contenido hijo */
+    padding: 20px; /* Aplica un margen interno de 20px en los bordes de la pantalla */
+}
+
+/* Header estilizado */
+.header {
+    text-align: center; /* Centra el texto del encabezado */
+    margin-bottom: 25px; /* Espacio inferior respecto al contenido principal */
+    position: relative; /* Posicionamiento relativo para contener elementos absolutos */
+}
+
+.embajador-shield {
+    font-size: 3rem; /* Tamaño de fuente grande para el emoji del escudo */
+    filter: drop-shadow(0 0 10px var(--azul-electrico)); /* Agrega una sombra resplandeciente alrededor del logo */
+    margin-bottom: 5px; /* Separación inferior con respecto al título */
+}
+
+.header h1 {
+    font-size: 2.2rem; /* Tamaño de letra del título principal */
+    font-weight: 900; /* Grosor de letra muy robusto (black/bold) */
+    letter-spacing: 2px; /* Espaciado entre caracteres */
+    background: linear-gradient(180deg, #FFFFFF 0%, #A5C4FF 100%); /* Fondo con degradado de texto */
+    background-clip: text; /* Recorta el fondo para que solo cubra el contorno del texto (estándar) */
+    -webkit-background-clip: text; /* Compatibilidad para recortar fondo en navegadores WebKit (Chrome/Safari) */
+    -webkit-text-fill-color: transparent; /* Hace transparente el color interno de las letras para mostrar el degradado */
+    text-shadow: 0 0 20px rgba(0, 82, 255, 0.4); /* Resplandor suave detrás del texto */
+}
+
+.header .subtitle {
+    color: var(--dorado-millos); /* Aplica el color dorado al subtítulo */
+    font-size: 0.95rem; /* Tamaño de texto del subtítulo */
+    font-weight: 700; /* Texto en negrita */
+    letter-spacing: 3px; /* Espaciado entre letras para estética moderna */
+    margin-top: 5px; /* Margen superior para despegarlo del título */
+}
+
+.header .subtitle span {
+    color: var(--blanco-puro); /* Cambia el texto del span interno a blanco */
+    border-bottom: 2px solid var(--dorado-millos); /* Añade una línea dorada debajo de la palabra */
+    padding-bottom: 2px; /* Espacio entre el texto y la línea */
+}
+
+/* Grid contenedor de Tarjetas */
+.grid-container {
+    display: grid; /* Utiliza el sistema de maquetación en cuadrícula CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Crea columnas flexibles que se adaptan automáticamente a la pantalla */
+    gap: 25px; /* Espaciado uniforme entre tarjetas */
+    width: 100%; /* Ancho total del contenedor */
+    max-width: 1200px; /* Límite máximo de ancho en pantallas grandes */
+    margin-bottom: 30px; /* Separación inferior del pie de página */
+}
+
+/* Estilo de Tarjeta Premium */
+.card {
+    background: rgba(11, 26, 58, 0.85); /* Fondo azul oscuro semi-transparente */
+    border: 1px solid rgba(0, 82, 255, 0.4); /* Borde fino azul */
+    border-radius: 16px; /* Redondeo estilizado de las esquinas */
+    padding: 20px; /* Margen interno dentro de cada tarjeta */
+    display: flex; /* Organización flexbox interna */
+    flex-direction: column; /* Alineación vertical de los elementos internos */
+    justify-content: space-between; /* Distribuye espacio vertical proporcionalmente */
+    align-items: center; /* Centra los contenidos horizontalmente */
+    backdrop-filter: blur(10px); /* Aplica un efecto de desfoque estilo cristal al fondo detrás de la tarjeta */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 
+                inset 0 0 15px rgba(0, 82, 255, 0.2); /* Doble sombra: una externa y una luz interna azul */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave para animaciones interactiva */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta 5px al pasar el cursor por encima */
+    border-color: var(--dorado-millos); /* Cambia el color del borde a dorado en hover */
+    box-shadow: 0 12px 35px rgba(0, 51, 160, 0.5),
+                0 0 15px rgba(255, 215, 0, 0.3); /* Intensifica las sombras y el resplandor dorado */
+}
+
+.card-header h3 {
+    font-size: 1.1rem; /* Tamaño de letra del título de la tarjeta */
+    font-weight: 700; /* Texto en negrita */
+    letter-spacing: 1px; /* Ligero espaciado de letras */
+    color: var(--blanco-puro); /* Color de texto blanco */
+    border-bottom: 2px solid var(--azul-electrico); /* Línea divisoria azul bajo el título */
+    padding-bottom: 6px; /* Distancia entre el texto y la línea inferior */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    text-align: center; /* Centra el texto del título */
+}
+
+/* Zona de Figuras Geométricas */
+.shape-wrapper {
+    height: 110px; /* Altura fija para contener cada figura */
+    display: flex; /* Flexbox para centrar figuras en su espacio */
+    align-items: center; /* Centrado vertical de la figura */
+    justify-content: center; /* Centrado horizontal de la figura */
+    margin: 15px 0; /* Margen arriba y abajo */
+}
+
+/* Formas con gradientes de color y brillo */
+.shape {
+    transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1); /* Transición suave de 2 segundos para animaciones de movimiento o giro */
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6)); /* Sombra brillante dorada que bordea la silueta de la figura */
+}
+
+.cuadrado {
+    width: 60px; /* Ancho idéntico a la altura para formar un cuadrado */
+    height: 60px; /* Altura del cuadrado */
+    background: linear-gradient(135deg, var(--azul-electrico), var(--azul-primario)); /* Degradado azul en diagonal */
+    border: 2px solid var(--dorado-millos); /* Borde dorado estilizado */
+    border-radius: 4px; /* Esquinas ligeramente suavizadas */
+}
+
+.rectangulo {
+    width: 85px; /* Ancho mayor para simular la forma alargada */
+    height: 50px; /* Altura proporcionalmente menor */
+    background: linear-gradient(135deg, var(--azul-electrico), var(--azul-primario)); /* Degradado azul */
+    border: 2px solid var(--dorado-millos); /* Borde dorado */
+    border-radius: 4px; /* Esquinas ligeramente curvas */
+}
+
+.circulo {
+    width: 60px; /* Ancho del círculo */
+    height: 60px; /* Altura igual al ancho */
+    background: linear-gradient(135deg, var(--azul-electrico), var(--azul-primario)); /* Degradado azul */
+    border: 2px solid var(--dorado-millos); /* Borde dorado */
+    border-radius: 50%; /* Transforma la caja en un círculo perfecto al 50% */
+}
+
+.triangulo {
+    width: 0; /* El ancho es cero para construir la figura con bordes CSS */
+    height: 0; /* La altura es cero */
+    border-left: 35px solid transparent; /* Transparencia en borde izquierdo */
+    border-right: 35px solid transparent; /* Transparencia en borde derecho */
+    border-bottom: 60px solid var(--azul-electrico); /* Borde inferior azul visible que da la forma del triángulo */
+    filter: drop-shadow(0 0 6px var(--dorado-millos)); /* Sombra resplandeciente alrededor de la pirámide */
+}
+
+/* Animación Giro de 360 Grados */
+.girar {
+    animation: rotar360 2s ease-in-out; /* Ejecuta la animación definida llamada 'rotar360' durante 2 segundos */
+}
+
+@keyframes rotar360 {
+    0% {
+        transform: rotate(0deg) scale(1); /* Inicio: posición normal a 0 grados */
+    }
+    50% {
+        transform: rotate(180deg) scale(1.15); /* Mitad: girado a 180° y ampliado un 15% */
+    }
+    100% {
+        transform: rotate(360deg) scale(1); /* Final: vuelta completa de 360° y vuelve a tamaño normal */
+    }
+}
+
+/* Inputs con Labels */
+.inputs {
+    width: 100%; /* Ancho completo */
+    display: flex; /* Organización flex */
+    flex-direction: column; /* Disposición en columna */
+    gap: 10px; /* Espaciado entre varios campos de entrada */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+.input-group {
+    display: flex; /* Estructura flexbox interna */
+    flex-direction: column; /* Etiqueta arriba e input abajo */
+    align-items: flex-start; /* Alinea los textos a la izquierda */
+    gap: 4px; /* Espacio interno entre label e input */
+}
+
+.input-group label {
+    font-size: 0.75rem; /* Tamaño de letra pequeño para etiquetas */
+    font-weight: 700; /* Texto en negrita */
+    color: #a0b2d6; /* Tono azul claro suave */
+    text-transform: uppercase; /* Convierte todo el texto de la etiqueta a mayúsculas */
+}
+
+input {
+    width: 100%; /* Ancho total del cuadro de texto */
+    padding: 10px; /* Relleno interno para poder escribir cómodamente */
+    border-radius: 8px; /* Esquinas redondeadas */
+    border: 1px solid rgba(0, 82, 255, 0.5); /* Borde azul de opacidad media */
+    background-color: rgba(4, 13, 33, 0.8); /* Fondo oscuro transparente */
+    color: var(--blanco-puro); /* Color blanco para el texto escrito */
+    font-family: 'Montserrat', sans-serif; /* Mantiene la fuente del diseño */
+    font-weight: 700; /* Texto digitado en negrita */
+    font-size: 0.95rem; /* Tamaño adecuado de lectura */
+    outline: none; /* Elimina el borde genérico por defecto al seleccionar */
+    transition: all 0.3s ease; /* Transición para efectos en foco */
+}
+
+input:focus {
+    border-color: var(--dorado-millos); /* Borde cambia a dorado cuando el usuario hace clic adentro */
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5); /* Efecto de luz resplandeciente alrededor del campo */
+}
+
+/* Botón de Acción Estilo Millonarios */
+.btn-calcular {
+    background: linear-gradient(135deg, #0033A0 0%, #0052FF 100%); /* Fondo con degradado azul intenso */
+    color: var(--blanco-puro); /* Texto en color blanco */
+    border: 1px solid var(--dorado-millos); /* Borde delgado de color dorado */
+    padding: 12px; /* Tamaño y área de clic cómoda */
+    border-radius: 8px; /* Bordes curvados */
+    font-family: 'Montserrat', sans-serif; /* Fuente del diseño */
+    font-weight: 900; /* Negrita muy pronunciada */
+    font-size: 0.85rem; /* Tamaño de letra de botón */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    cursor: pointer; /* Cambia el puntero del ratón a la manito interactiva */
+    width: 100%; /* Ancho completo de tarjeta */
+    transition: all 0.3s ease; /* Animación fluida de transiciones */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra para elevarlo */
+}
+
+.btn-calcular:hover {
+    background: linear-gradient(135deg, #0052FF 0%, #002277 100%); /* Invierte/cambia el degradado al pasar el cursor */
+    box-shadow: 0 0 15px rgba(0, 82, 255, 0.7); /* Brillo electrizante azul */
+    transform: scale(1.02); /* Incrementa ligeramente el tamaño del botón */
+}
+
+/* Tarjeta de Resultados */
+.resultado {
+    margin-top: 12px; /* Margen superior de separación */
+    width: 100%; /* Ancho del 100% */
+    padding: 10px; /* Relleno para separación de texto */
+    background: rgba(4, 13, 33, 0.6); /* Fondo azul muy oscuro y translúcido */
+    border-radius: 8px; /* Bordes suavizados */
+    border-left: 3px solid var(--dorado-millos); /* Franja vertical dorada a la izquierda */
+    font-size: 0.85rem; /* Tamaño de fuente ligero */
+    color: var(--blanco-puro); /* Texto blanco */
+    min-height: 48px; /* Altura mínima reservada para evitar saltos bruscos de maquetación */
+    display: flex; /* Organización flexible interna */
+    flex-direction: column; /* Disposición vertical para Área y Perímetro */
+    justify-content: center; /* Centrado de contenido vertical */
+}
+
+.resultado strong {
+    color: var(--dorado-millos); /* Resalta las etiquetas "Área:" y "Perímetro:" en dorado */
+}
+
+/* Footer */
+.footer {
+    width: 100%; /* Ancho total */
+    max-width: 1200px; /* Límite de anchura máxima en pantalla */
+    padding: 15px; /* Espacio interior */
+    background: rgba(11, 26, 58, 0.9); /* Fondo similar a las tarjetas */
+    border: 1px solid var(--azul-electrico); /* Borde superior/general azul */
+    border-radius: 12px; /* Bordes redondeados */
+    text-align: center; /* Alineación del texto al centro */
+    font-size: 0.85rem; /* Tamaño de fuente del texto de derechos/créditos */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4); /* Sombra pronunciada para destacar la franja */
+}
