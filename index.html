@@ -1,0 +1,117 @@
+<!DOCTYPE html> <!-- Define que el documento utiliza el estándar de HTML5 -->
+<html lang="es"> <!-- Define el idioma principal del contenido de la página como español -->
+<head> <!-- Contenedor de metadatos e informaciówidth, initial-scale=1.0"> <!-- Ajusta el diseño al ancho de pantalla del dispositivo (diseño responsivo) -->
+    <title>Calculadora Geométrica | Millonarios FC</title> <!-- Define el título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="style.css"> <!-- Conecta este archivo HTML con la hoja de estilos CSS -->
+    <!-- Fuente moderna Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet"> <!-- Importa la fuente tipográfica "Montserrat" desde Google Fonts -->
+</head>
+<body> <!-- Contenedor principal de todo el contenido visible de la página web -->
+n que no se ve directamente en la página -->
+    <meta charset="UTF-8"> <!-- Configura la codificación de caracteres a UTF-8 para soportar tildes y ñ -->
+    <meta name="viewport" content="width=device-
+    <div class="background-overlay"></div> <!-- Capa contenedora transparente para aplicar efectos de fondo -->
+
+    <!-- Encabezado con branding de Millonarios FC -->
+    <header class="header"> <!-- Sección superior de la página (encabezado) -->
+        <div class="logo-container"> <!-- Div contenedor para alinear el logo o escudo -->
+            <!-- Escudo vectorial genérico o logo de embajador -->
+            <div class="embajador-shield">Ⓜ️</div> <!-- Muestra el emoji utilizado como símbolo del escudo -->
+        </div>
+        <h1>CALCULADORA GEOMÉTRICA</h1> <!-- Título principal de mayor jerarquía en la página -->
+        <p class="subtitle">EDICIÓN OFICIAL <span>MILLONARIOS FC</span></p> <!-- Subtítulo decorativo con etiqueta de resaltado -->
+    </header>
+
+    <!-- Contenedor Principal (Grid / Wireframe) -->
+    <main class="grid-container"> <!-- Área principal del cuerpo de la página con estructura de cuadrícula -->
+
+        <!-- Cuadrado -->
+        <div class="card"> <!-- Tarjeta contenedora para el cálculo del Cuadrado -->
+            <div class="card-header"> <!-- Cabecera de la tarjeta del Cuadrado -->
+                <h3>CUADRADO</h3> <!-- Título de la figura -->
+            </div>
+            <div class="shape-wrapper"> <!-- Envoltorio para centrar la figura gráfica -->
+                <div id="shape-cuadrado" class="shape cuadrado"></div> <!-- Elemento visual dibujado con CSS que representa el cuadrado -->
+            </div>
+            <div class="inputs"> <!-- Contenedor para los campos de entrada de datos -->
+                <div class="input-group"> <!-- Agrupador de etiqueta y caja de texto -->
+                    <label for="lado-cuadrado">Lado (cm):</label> <!-- Etiqueta descriptiva para el campo del lado -->
+                    <input type="number" id="lado-cuadrado" placeholder="Ej: 5"> <!-- Campo de entrada numérico con ID único y texto de sugerencia -->
+                </div>
+            </div>
+            <button onclick="calcularCuadrado()" class="btn-calcular">CALCULAR ⚽</button> <!-- Botón que ejecuta la función JavaScript al hacer clic -->
+            <div id="res-cuadrado" class="resultado"></div> <!-- Contenedor vacío donde JS insertará el área y perímetro calculados -->
+        </div>
+
+        <!-- Triángulo -->
+        <div class="card"> <!-- Tarjeta contenedora para el Triángulo -->
+            <div class="card-header"> <!-- Cabecera de la tarjeta del Triángulo -->
+                <h3>TRIÁNGULO</h3> <!-- Título de la figura -->
+            </div>
+            <div class="shape-wrapper"> <!-- Envoltorio para centrar la figura -->
+                <div id="shape-triangulo" class="shape triangulo"></div> <!-- Elemento visual que representa el triángulo -->
+            </div>
+            <div class="inputs"> <!-- Contenedor para los campos de entrada de datos -->
+                <div class="input-group"> <!-- Agrupador para el dato Base -->
+                    <label for="base-triangulo">Base (cm):</label> <!-- Etiqueta para la base -->
+                    <input type="number" id="base-triangulo" placeholder="Ej: 4"> <!-- Campo de entrada para la base -->
+                </div>
+                <div class="input-group"> <!-- Agrupador para el dato Altura -->
+                    <label for="altura-triangulo">Altura (cm):</label> <!-- Etiqueta para la altura -->
+                    <input type="number" id="altura-triangulo" placeholder="Ej: 4"> <!-- Campo de entrada para la altura -->
+                </div>
+            </div>
+            <button onclick="calcularTriangulo()" class="btn-calcular">CALCULAR ⚽</button> <!-- Botón para desencadenar la función del triángulo -->
+            <div id="res-triangulo" class="resultado"></div> <!-- Contenedor para mostrar resultados del triángulo -->
+        </div>
+
+        <!-- Círculo -->
+        <div class="card"> <!-- Tarjeta contenedora para el Círculo -->
+            <div class="card-header"> <!-- Cabecera de la tarjeta del Círculo -->
+                <h3>CÍRCULO</h3> <!-- Título de la figura -->
+            </div>
+            <div class="shape-wrapper"> <!-- Envoltorio para centrar la figura -->
+                <div id="shape-circulo" class="shape circulo"></div> <!-- Elemento visual que representa el círculo -->
+            </div>
+            <div class="inputs"> <!-- Contenedor para los campos de entrada -->
+                <div class="input-group"> <!-- Agrupador para el dato Radio -->
+                    <label for="radio-circulo">Radio (cm):</label> <!-- Etiqueta para el radio -->
+                    <input type="number" id="radio-circulo" placeholder="Ej: 2"> <!-- Campo numérico para ingresar el radio -->
+                </div>
+            </div>
+            <button onclick="calcularCirculo()" class="btn-calcular">CALCULAR ⚽</button> <!-- Botón para desencadenar la función del círculo -->
+            <div id="res-circulo" class="resultado"></div> <!-- Contenedor para resultados del círculo -->
+        </div>
+
+        <!-- Rectángulo -->
+        <div class="card"> <!-- Tarjeta contenedora para el Rectángulo -->
+            <div class="card-header"> <!-- Cabecera de la tarjeta del Rectángulo -->
+                <h3>RECTÁNGULO</h3> <!-- Título de la figura -->
+            </div>
+            <div class="shape-wrapper"> <!-- Envoltorio para centrar la figura -->
+                <div id="shape-rectangulo" class="shape rectangulo"></div> <!-- Elemento visual que representa el rectángulo -->
+            </div>
+            <div class="inputs"> <!-- Contenedor para los campos de entrada de datos -->
+                <div class="input-group"> <!-- Agrupador para el dato Base -->
+                    <label for="base-rectangulo">Base (cm):</label> <!-- Etiqueta para la base del rectángulo -->
+                    <input type="number" id="base-rectangulo" placeholder="Ej: 5"> <!-- Campo de entrada para la base -->
+                </div>
+                <div class="input-group"> <!-- Agrupador para el dato Altura -->
+                    <label for="altura-rectangulo">Altura (cm):</label> <!-- Etiqueta para la altura del rectángulo -->
+                    <input type="number" id="altura-rectangulo" placeholder="Ej: 2"> <!-- Campo de entrada para la altura -->
+                </div>
+            </div>
+            <button onclick="calcularRectangulo()" class="btn-calcular">CALCULAR ⚽</button> <!-- Botón para desencadenar la función del rectángulo -->
+            <div id="res-rectangulo" class="resultado"></div> <!-- Contenedor para resultados del rectángulo -->
+        </div>
+
+    </main>
+
+    <!-- Footer estilo banner estelar -->
+    <footer class="footer"> <!-- Pie de página con información complementaria -->
+        <p>⚡ Diseñado para Futuros Ingenieros de Software | <strong>Orgullo Embajador 💙</strong></p> <!-- Mensaje de pie de página -->
+    </footer>
+
+    <script src="script.js"></script> <!-- Vincula e incluye el archivo de lógica de JavaScript al final para no bloquear la carga visual -->
+</body>
+</html>
